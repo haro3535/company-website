@@ -1,37 +1,15 @@
-"use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
-
-import { gsap } from "gsap";
-
-import { TextPlugin } from "gsap/TextPlugin";
-
-
-gsap.registerPlugin(TextPlugin);
+import Greeting from "./Greeting";
 
 
 
 export default function Home() {
 
-  useEffect(() => {
-    gsap.fromTo(
-      ".animated-text",
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.5, ease: "power1.out" },
-      
-    );
-  }, []);
 
   return (
     <div className="w-full items-center flex flex-col">
-      <div className="h-screen w-full flex flex-col items-center justify-center">
-        <p className="animated-text text-6xl font-bold">Welcome to Our Website</p>
-        <p className="animated-text text-6xl font-bold">Let's work together</p>
-      </div>
-
-
-
+      <Greeting />
 
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
         <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
