@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Dropdown, { DropdownItem } from "./C_Dropdown";
 
 
 export default function NavBar() {
@@ -15,7 +16,13 @@ export default function NavBar() {
             { width: "100%", duration: 1, ease: "power1.out", delay: 1 }
           );
         }
-    }, []); 
+    }, []);
+
+    const dropdownList: DropdownItem[] = [
+        { label: "Services", url: "/services" },
+        { label: "Portfolio", url: "/portfolio" },
+        { label: "Blog", url: "/blog" },
+    ];
 
   return (
     <nav className="w-full flex flex-col justify-between items-center space-y-1">
@@ -27,6 +34,9 @@ export default function NavBar() {
         <ul className="flex w-1/3 justify-between items-center py-3 h-16 text-gray-300">
           <li>
             <a href="/" className="hover:text-gray-100">Home</a>
+          </li>
+          <li>
+            <Dropdown DropdownItems={dropdownList} />
           </li>
           <li>
             <a href="/about" className="hover:text-gray-100">About</a>
