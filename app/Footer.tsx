@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="w-3/4 flex items-center justify-between">
                 <div className="w-1/4 h-full py-3 px-2 space-y-2">
                     <h1 className="text-3xl font-bold text-gray-300">Overfit Soft</h1>
-                    <p className="ps-2 text-[13px]">
+                    <p className="text-[13px]">
                         We provide cutting-edge software solutions to help your business thrive in the digital age.
                     </p>
                 </div>
