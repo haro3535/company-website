@@ -11,7 +11,14 @@ function Iphone16() {
     const result = useLoader(GLTFLoader, "/iphone_16/scene.gltf")
     const meshRef = useRef<THREE.Group>(null);
 
+    // useFrame(() => {
+    //     if (meshRef.current) {
+    //         meshRef.current.rotation.y += 0.001; // Adjust the speed of rotation
+    //     }
+    // });
+
     result.scene.position.set(0, 0, -10)
+
 
     return <primitive ref={meshRef} object={result.scene} />
 }
@@ -19,8 +26,8 @@ function Iphone16() {
 export default function Module01() {
     return (
         <div className="w-full">
-            <h1>Module01</h1>
-            <div className="flex justify-end space-x-10">
+            {/* <h1>Module01</h1> */}
+            <div className="flex items-center justify-end space-x-10">
                 <div className="w-1/3 space-y-8">
                     <div className="w-full py-4 px-2 space-y-3.5">
                         <p className="text-xl">Mobile Apps</p>
@@ -46,6 +53,9 @@ export default function Module01() {
                     <Canvas>
                         <mesh>
                             <ambientLight intensity={0.1} />
+                            <directionalLight position={[0, 0, 5]} intensity={1} />
+                            <pointLight position={[10, 10, 10]} intensity={1} />
+                            <pointLight position={[-10, -10, -10]} intensity={1} />
                             <Suspense fallback={null}>
                                 <Iphone16 />
                             </Suspense>
