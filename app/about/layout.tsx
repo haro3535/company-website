@@ -1,4 +1,10 @@
+import { Metadata } from 'next';
 
+
+export const metadata: Metadata = {
+  title: 'Overfit Soft | About',
+  description: 'About page for Overfit Soft',
+};
 
 export default function AboutLayout({ children }: Readonly<{
   children: React.ReactNode;

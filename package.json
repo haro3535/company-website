@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.0.5",
+    "@react-three/fiber": "^9.1.1",
+    "@types/three": "^0.175.0",
     "gsap": "^3.12.7",
     "next": "15.2.2",
     "react": "^19.0.0",
