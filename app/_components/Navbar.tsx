@@ -32,7 +32,7 @@ export default function NavBar() {
   const isUnderConstruction = pathname === "/under-construction";
 
   return (
-    <nav className="w-full flex flex-col justify-between items-center space-y-1">
+    <nav className="w-full bg-[var(--background)] sticky flex flex-col justify-between items-center space-y-1 z-10 top-0">
       <div className={"w-full flex items-center px-10 " + (isUnderConstruction ? "justify-center py-3" : "justify-between")}>
         <div>
           <h1 className="text-3xl font-bold">Overfit Soft</h1>

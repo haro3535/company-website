@@ -1,8 +1,8 @@
 
 import Image from "next/image";
-import Greeting from "./Greeting";
-import Module01 from "./Module01";
-import Module02 from "./Module02";
+import Greeting from "./_components/Greeting";
+import Module01 from "./_components/Module01";
+import Module02 from "./_components/Module02";
 
 export default function Home() {
 
