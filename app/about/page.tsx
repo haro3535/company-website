@@ -11,7 +11,7 @@ export default function AboutPage() {
                         We are a software development company that specializes in creating innovative solutions for businesses of all sizes. Our team of experienced developers, designers, and project managers work together to deliver high-quality software that meets the unique needs of our clients.
                     </p>
                 </div>
-                <div className=" w-1/2 flex flex-col items-start justify-center px-10">
+                <div className=" w-1/2 flex flex-col items-end justify-center px-10">
                     <div className='relative'>
                         <Image 
                             src="https://picsum.photos/600/400"
