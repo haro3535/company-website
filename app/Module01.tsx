@@ -8,6 +8,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import * as THREE from "three";
 import { gsap } from "gsap";
 
+
 function Iphone16() {
     const result = useLoader(GLTFLoader, "/iphone_16/scene.gltf")
     const meshRef = useRef<THREE.Group>(null);
@@ -51,6 +52,28 @@ function Iphone16() {
                 ease: "power1.inOut",
             }, 3); // Start after the position animation is complete
         }
+        
+        // MP4 Video Texture 
+        const video = document.createElement("video");
+        video.src = "/video.mp4"; // in public file
+        video.crossOrigin = "Anonymous";
+        video.loop = true;
+        video.muted = true;
+        video.play();
+
+        const videoTexture = new THREE.VideoTexture(video);
+        videoTexture.flipY = false;
+
+  
+
+        // "Object_18" is the name of the object that is the scene part of the model
+        result.scene.traverse((child) => {
+            if ((child as THREE.Mesh).isMesh && child.name === "Object_18") {
+                (child as THREE.Mesh).material = new THREE.MeshBasicMaterial({
+                    map: videoTexture,
+                });
+            }
+        });
     }, []);
 
 
