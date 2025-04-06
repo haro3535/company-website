@@ -7,6 +7,7 @@ import { OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import * as THREE from "three";
 import { gsap } from "gsap";
+import { text } from "stream/consumers";
 
 
 function Iphone16() {
@@ -53,25 +54,33 @@ function Iphone16() {
             }, 3); // Start after the position animation is complete
         }
         
+        
+
         // MP4 Video Texture 
         const video = document.createElement("video");
         video.src = "/video.mp4"; // in public file
         video.crossOrigin = "Anonymous";
         video.loop = true;
-        video.muted = true;
+        video.muted = true; 
         video.play();
 
         const videoTexture = new THREE.VideoTexture(video);
         videoTexture.flipY = false;
 
-  
+        videoTexture.repeat.set(2.2, 1); // For stretching
+        videoTexture.center.set(0, 0); //For centering
+        videoTexture.offset.set(-0.05, -0.01); //For sliding
+        videoTexture.needsUpdate = true;
 
         // "Object_18" is the name of the object that is the scene part of the model
         result.scene.traverse((child) => {
-            if ((child as THREE.Mesh).isMesh && child.name === "Object_18") {
-                (child as THREE.Mesh).material = new THREE.MeshBasicMaterial({
+            const mesh = child as THREE.Mesh;
+            if (mesh.isMesh && child.name === "Object_18") {
+                mesh.material = new THREE.MeshBasicMaterial({
                     map: videoTexture,
+                    toneMapped: false,
                 });
+
             }
         });
     }, []);
