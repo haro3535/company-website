@@ -58,7 +58,7 @@ function Iphone16() {
 
         // MP4 Video Texture 
         const video = document.createElement("video");
-        video.src = "/video.mp4"; // in public file
+        video.src = "/videoreels.mp4"; // in public file
         video.crossOrigin = "Anonymous";
         video.loop = true;
         video.muted = true; 
@@ -130,3 +130,15 @@ export default function Module01() {
         </div>
     )
 }
+    // <div className="w-1/3">
+    //     {/* Embed YouTube Video */}
+    //     <iframe
+    //         width="100%"
+    //         height="315"
+    //         src="https://www.youtube.com/embed/Ef1K1m7k0_k" // Replace VIDEO_ID with the actual YouTube video ID
+    //         title="YouTube video player"
+    //         frameBorder="0"
+    //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    //         allowFullScreen
+    //     ></iframe>
+    // </div>
