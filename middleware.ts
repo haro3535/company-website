@@ -14,6 +14,11 @@ export function middleware(req: NextRequest) {
   //   return NextResponse.redirect(new URL("/under-construction", req.url));
   // }
 
+  if (pathname === "/graid") {
+    // Allow access to the Graid dashboard and its subpages
+    return NextResponse.redirect(new URL("/graid/dashboard", req.url));
+  }
+
   return NextResponse.next();
 }
 
