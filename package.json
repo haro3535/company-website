@@ -14,9 +14,10 @@
     "@react-three/fiber": "^9.1.1",
     "@types/three": "^0.175.0",
     "gsap": "^3.12.7",
-    "next": "15.2.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "mqtt": "^5.12.0",
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "three": "^0.175.0"
   },
   "devDependencies": {
