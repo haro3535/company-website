@@ -41,14 +41,13 @@ export default function Dashboard() {
           console.log("Received JSON:", jsonData);
 
           const measurementObject = {
-            name: "Measurement " + (measurementObjectList.length + 1),
-            nitrogen: jsonData.nitrogen + " ppm",
-            phosphorus: jsonData.phosphorus + " ppm",
-            potassium: jsonData.potassium + " ppm",
-            temperature: jsonData.temperature + " °C",
-            ec: jsonData.ec + " mS/cm",
-            ph: jsonData.ph + " pH",
-            humidity: jsonData.humidity + " %",
+            nitrogen: jsonData.nitrogen ,
+            phosphorus: jsonData.phosphorus ,
+            potassium: jsonData.potassium ,
+            temperature: jsonData.temperature,
+            ec: jsonData.ec,
+            ph: jsonData.ph ,
+            humidity: jsonData.humidity,
           };
 
           setMeasurementObjectList((prevList) => [...prevList, measurementObject]);
@@ -183,7 +182,7 @@ export default function Dashboard() {
           <div className="mt-4">
             {selectedMeasurement ? (
               <div>
-                <p className="text-sm">Name: {selectedMeasurement.name}</p>
+                <p className="text-sm">Name: {}</p>
                 <p className="text-sm">Nitrogen: {selectedMeasurement.nitrogen}</p>
                 <p className="text-sm">Phosphorus: {selectedMeasurement.phosphorus}</p>
                 <p className="text-sm">Potassium: {selectedMeasurement.potassium}</p>
