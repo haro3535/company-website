@@ -80,7 +80,6 @@ export default function Dashboard() {
     if (!client) return;
     setLoading(true);
     client.publish("esp32/command", "getMeasurements");
-    //client.publish("esp32/command", "getMockData");
   };
 
   const MeasurementListItem = ({ measurement, onSelect }: { measurement: any; onSelect: () => void }) => (
