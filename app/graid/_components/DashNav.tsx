@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import "@/app/globalsicons.css";
+import SensorMeasuringPage from "../sensor-measuring/page";
+import { url } from "inspector";
 
 
 
@@ -11,6 +13,12 @@ export default function DashNav() {
         <ul className="flex items-center space-x-8 ml-10">
             <li>
                 <a href="/graid/dashboard" className="">Dashboard</a>
+            </li>
+            <li>
+                <Link href={'/graid/records'}>Records</Link>
+            </li>
+            <li>
+                <Link href={'/graid/sensor-measuring'}>Sensor Measuring</Link>
             </li>
             <li>
                 <a href="/graid/settings" className="">Settings</a>
